@@ -1,4 +1,9 @@
 .support {
+	margin-bottom: 100px;
+
+	@media (max-width: $mobile) {
+		margin-bottom: 70px;
+	}
 	// .support__container
 
 	&__container {
