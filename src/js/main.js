@@ -117,9 +117,81 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
+    // FAQ аккордеон
+    const initFAQ = () => {
+        const faqItems = document.querySelectorAll('.faq__item');
+
+        if (!faqItems.length) return;
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq__question');
+            const answer = item.querySelector('.faq__answer');
+            const icon = item.querySelector('.faq__question img');
+
+            if (!question || !answer) return;
+
+            // Изначально скрываем все ответы
+            answer.style.maxHeight = '0';
+            answer.style.opacity = '0';
+            answer.style.overflow = 'hidden';
+            answer.style.transition = 'max-height 0.4s ease, opacity 0.4s ease';
+
+            question.addEventListener('click', function () {
+                const isOpen = item.classList.contains('faq__item--active');
+
+                // Закрываем все остальные элементы
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('faq__item--active');
+                        const otherAnswer = otherItem.querySelector('.faq__answer');
+                        const otherIcon = otherItem.querySelector('.faq__question img');
+
+                        if (otherAnswer) {
+                            otherAnswer.style.maxHeight = '0';
+                            otherAnswer.style.opacity = '0';
+                        }
+
+                        if (otherIcon) {
+                            otherIcon.style.transform = 'rotate(0deg)';
+                            otherIcon.style.transition = 'transform 0.4s ease';
+                        }
+                    }
+                });
+
+                // Переключаем текущий элемент
+                if (isOpen) {
+                    // Закрываем
+                    item.classList.remove('faq__item--active');
+                    answer.style.maxHeight = '0';
+                    answer.style.opacity = '0';
+
+                    if (icon) {
+                        icon.style.transform = 'rotate(0deg)';
+                        icon.style.transition = 'transform 0.4s ease';
+                    }
+                } else {
+                    // Открываем
+                    item.classList.add('faq__item--active');
+
+                    // Вычисляем высоту контента
+                    const scrollHeight = answer.scrollHeight;
+                    answer.style.maxHeight = scrollHeight + 'px';
+                    answer.style.opacity = '1';
+
+                    if (icon) {
+                        icon.style.transform = 'rotate(45deg)';
+                        icon.style.transition = 'transform 0.4s ease';
+                    }
+                }
+            });
+        });
+    };
+
     // Инициализация функций
     smoothScroll();
     initPackagesTabs();
     initTestimonialsSwiper();
+    initFAQ();
 
 });
+
