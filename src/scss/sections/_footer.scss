@@ -1,0 +1,305 @@
+.footer {
+	background-color: #000300;
+	// .footer__content
+
+	&__content {
+		padding: 110px 0 24px;
+
+		@media screen and (max-width: $mobile) {
+			padding: 97px 0 26px;
+		}
+	}
+
+	// .footer__columns
+
+	&__columns {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 74px;
+
+		@media (max-width: $tablet) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 40px;
+		}
+
+		@media (max-width: $mobile) {
+			display: grid;
+			grid-template-areas:
+				"brand"
+				"contacts"
+				"menu social";
+			grid-template-columns: 1fr;
+			gap: 32px;
+			padding-bottom: 55px;
+		}
+	}
+
+	// .footer__col
+
+	&__col {
+		@media (max-width: $tablet) {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+
+	// .footer__col--brand
+
+	&__col--brand {
+		max-width: 26%;
+		@media (max-width: $tablet) {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+
+	// .footer__logo
+
+	&__logo {
+		margin-bottom: 24px;
+	}
+
+	// .footer__desc
+
+	&__desc {
+		color: rgba(248, 248, 242, 0.8);
+		font-family: $font-inter;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 30px;
+		margin-bottom: 15px;
+
+		@media screen and (max-width: $mobile) {
+			max-width: 310px;
+		}
+	}
+
+	// .footer__links
+
+	&__links {
+	}
+
+	// .footer__link
+
+	&__link {
+		color: rgba(248, 248, 242, 0.8);
+		font-family: $font-inter;
+		font-size: 15px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 30px;
+		text-decoration: underline;
+		&:hover {
+			color: $action;
+		}
+	}
+
+	// .footer__divider
+
+	&__divider {
+	}
+
+	// .footer__col--contacts
+
+	&__col--contacts {
+		max-width: 19%;
+		@media (max-width: $tablet) {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+
+	// .footer__title
+
+	&__title {
+		color: #f8f8f2;
+		font-family: $font-rajdhani;
+		font-size: 23px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 22px;
+		margin-bottom: 35px;
+	}
+
+	// .footer__contacts
+
+	&__contacts {
+	}
+
+	// .footer__contact
+
+	&__contact {
+		display: flex;
+		align-items: start;
+		gap: 6px;
+		margin-bottom: 25px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	// .footer__contact-icon
+
+	&__contact-icon {
+		margin-top: 7px;
+		width: 20px;
+	}
+
+	// .footer__contact-text
+
+	&__contact-text {
+		color: rgba(248, 248, 242, 0.8);
+		font-family: $font-inter;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 30px;
+
+		&:hover {
+			color: $action;
+		}
+	}
+
+	// .footer__col--menu
+
+	&__col--menu {
+		max-width: 8%;
+		@media (max-width: $tablet) {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+
+	// .footer__menu
+
+	&__menu {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	// .footer__menu-link
+
+	&__menu-link {
+		color: rgba(248, 248, 242, 0.8);
+		font-family: $font-inter;
+		font-size: 15px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 20px;
+		text-decoration: none;
+
+		&:hover {
+			color: $action;
+		}
+	}
+
+	// .footer__col--social
+
+	&__col--social {
+		max-width: 23%;
+		@media (max-width: $tablet) {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+
+	// .footer__socials
+
+	&__socials {
+		display: flex;
+		gap: 22px;
+		align-items: center;
+		margin-bottom: 104px;
+	}
+
+	// .footer__social
+
+	&__social {
+	}
+
+	// .footer__cta
+
+	&__cta {
+	}
+
+	// .footer__cta-btn
+
+	&__cta-btn {
+		background-color: $bg;
+		color: $title;
+		gap: 25px;
+
+		&:hover {
+			background-color: $action;
+			color: $bg;
+
+			path {
+				stroke: $bg;
+			}
+		}
+	}
+
+	// .footer__cta-icon
+
+	&__cta-icon {
+	}
+
+	// .footer__bottom
+
+	&__bottom {
+		border-top: 1px solid rgba(217, 219, 233, 0.3);
+		padding-top: 25px;
+	}
+
+	// .footer__copyright
+
+	&__copyright {
+		color: rgba(248, 248, 242, 0.8);
+		font-family: $font-inter;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 30px;
+		text-align: center;
+	}
+
+	// Мобильная сетка для колонок
+	@media (max-width: $mobile) {
+		&__columns {
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas:
+				"brand brand"
+				"contacts contacts"
+				"menu social";
+			gap: 57px;
+		}
+		&__col--brand {
+			grid-area: brand;
+			max-width: 100%;
+			width: 100%;
+		}
+		&__col--contacts {
+			grid-area: contacts;
+			max-width: 100%;
+			width: 100%;
+		}
+		&__col--menu {
+			grid-area: menu;
+			max-width: 100%;
+			width: 100%;
+		}
+		&__col--social {
+			grid-area: social;
+			max-width: 100%;
+			width: 100%;
+		}
+		&__col {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+}

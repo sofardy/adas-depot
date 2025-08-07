@@ -1,0 +1,50 @@
+// Variables
+$action: #b20000;
+$title: #222325;
+$text: #383e47;
+$bg: #f7f7f7;
+$white: #ffffff;
+$black: #000000;
+
+// Fonts
+$font-rajdhani: "Rajdhani", sans-serif;
+$font-inter: "Inter", sans-serif;
+
+// Breakpoints
+$mobile: 768px;
+$tablet: 1024px;
+$desktop: 1236px;
+
+// Animations
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+// Mixins
+@mixin fade-in {
+	animation: fadeIn 0.5s ease-in-out;
+}
+
+@mixin slide-up {
+	animation: slideUp 0.5s ease-out;
+}
+
+@mixin hover-transition {
+	transition: all 0.3s ease;
+}

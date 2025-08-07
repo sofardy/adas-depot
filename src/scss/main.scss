@@ -1,0 +1,19 @@
+// Import Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rajdhani:wght@600;700&display=swap");
+
+// Import variables and base styles
+@import "variables";
+@import "base";
+
+// Import sections
+@import "sections/header";
+@import "sections/hero";
+@import "sections/why";
+@import "sections/productoverview";
+@import "sections/support";
+@import "sections/packages";
+@import "sections/footer";
+
+// Import components (если будут нужны)
+// @import 'components/buttons';
+// @import 'components/cards';

@@ -1,0 +1,24 @@
+{
+	"name": "verstka1",
+	"version": "1.0.0",
+	"description": "HTML/CSS/SCSS project with build system",
+	"main": "index.js",
+	"scripts": {
+		"dev": "npm-run-all build --parallel watch:scss watch:html watch:js serve",
+		"build": "npm-run-all clean build:scss build:html build:js copy:assets",
+		"watch:scss": "sass --watch src/scss:dist/css --style=compressed",
+		"watch:html": "node scripts/watch-html.js",
+		"watch:js": "node scripts/watch-js.js",
+		"build:scss": "sass src/scss:dist/css --style=compressed",
+		"build:html": "node scripts/build-html.js",
+		"build:js": "mkdir -p dist/js && cp -r src/js/* dist/js/ 2>/dev/null || true",
+		"copy:assets": "cp -r assets dist/",
+		"serve": "live-server dist --port=3000",
+		"clean": "rm -rf dist"
+	},
+	"devDependencies": {
+		"live-server": "^1.2.2",
+		"npm-run-all": "^4.1.5",
+		"sass": "^1.69.5"
+	}
+}

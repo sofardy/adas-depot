@@ -1,0 +1,59 @@
+.header {
+	padding: 20px 0;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo {
+		img {
+			height: 40px;
+		}
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		gap: 48px;
+
+		@media (max-width: $tablet) {
+			gap: 20px;
+		}
+	}
+
+	&__nav {
+		ul {
+			display: flex;
+			gap: 48px;
+			font-family: $font-inter;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 24px; // 150%
+			letter-spacing: 0.5px;
+			color: var(--main, #383e47);
+			text-align: center;
+
+			@media (max-width: $tablet) {
+				gap: 20px;
+				font-size: 15px;
+			}
+
+			@media (max-width: $mobile) {
+				display: none;
+			}
+		}
+
+		a {
+			&:hover {
+				color: $action;
+			}
+		}
+	}
+
+	&__cta-btn {
+		width: 253px;
+	}
+}

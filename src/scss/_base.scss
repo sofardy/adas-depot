@@ -1,0 +1,120 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+body {
+	font-family: $font-inter;
+	background-color: $bg;
+	color: $text;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	@include hover-transition;
+}
+
+button,
+.button {
+	border: none;
+	border-radius: 0;
+	padding: 15px 20px;
+	background: $action;
+	color: $bg;
+	font-family: $font-rajdhani;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 150%;
+	text-transform: uppercase;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&:hover {
+		background-color: $title;
+	}
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.container {
+	max-width: $desktop;
+	margin: 0 auto;
+	padding: 0 20px;
+
+	@media (max-width: $mobile) {
+		padding: 0 20px;
+	}
+}
+
+// Utility classes
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+
+.font-rajdhani {
+	font-family: $font-rajdhani;
+}
+.font-inter {
+	font-family: $font-inter;
+}
+
+.text-action {
+	color: $action;
+}
+.text-title {
+	color: $title;
+}
+.text-text {
+	color: $text;
+}
+.text-white {
+	color: $white;
+}
+
+.bg-action {
+	background-color: $action;
+}
+.bg-title {
+	background-color: $title;
+}
+.bg-bg {
+	background-color: $bg;
+}
+.bg-white {
+	background-color: $white;
+}
+
+.fade-in {
+	@include fade-in;
+}
+.slide-up {
+	@include slide-up;
+}
