@@ -1,5 +1,11 @@
 <header class="header">
 	<div class="container header__container">
+		<!-- Burger button	 -->
+		<button class="header__burger">
+			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+				<path d="M3.5 7H24.5M3.5 14H12.8333M3.5 21H18.6667" stroke="#222325" stroke-linecap="round" />
+			</svg>
+		</button>
 		<a href="/" class="header__logo">
 			<img src="assets/img/logo-black.svg" alt="Adas Depot" />
 		</a>
@@ -7,16 +13,36 @@
 			<nav class="header__nav">
 				<ul>
 					<li><a href="/">Home</a></li>
-					<li><a href="/systems">Systems</a></li>
-					<li><a href="/contact">Contact</a></li>
+					<li><a href="#systems">Systems</a></li>
+					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
-			<button class="button header__cta-btn">
+			<a href="#systemform" class="button header__cta-btn">
 				<span>Book Call Now</span>
 				<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
 					<path d="M1 13L13 1M13 1H1M13 1V13" stroke="#fff" />
 				</svg>
-			</button>
+			</a>
 		</div>
 	</div>
+
+	<!-- Mobile menu -->
+	<div class="header__mobile-menu">
+		<div class="header__mobile-menu-header">
+			<a href="/" class="header__mobile-logo">
+				<img src="assets/img/logo-black.svg" alt="Adas Depot" />
+			</a>
+			<button class="header__mobile-close">×</button>
+		</div>
+		<nav class="header__mobile-nav">
+			<ul class="header__mobile-nav-list">
+				<li><a href="/">Home</a></li>
+				<li><a href="#systems">Systems</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<!-- Overlay -->
+	<div class="header__overlay"></div>
 </header>

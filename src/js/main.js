@@ -2,9 +2,36 @@
 document.addEventListener('DOMContentLoaded', function () {
     console.log('Adas Depot website loaded');
 
-    // Mobile menu toggle (если будет нужно)
+    // Mobile menu toggle
     const mobileMenuToggle = () => {
-        // Логика для мобильного меню
+        const burger = document.querySelector('.header__burger');
+        const mobileMenu = document.querySelector('.header__mobile-menu');
+        const mobileClose = document.querySelector('.header__mobile-close');
+        const overlay = document.querySelector('.header__overlay');
+
+        if (!burger || !mobileMenu) return;
+
+        const openMenu = () => {
+            mobileMenu.classList.add('header__mobile-menu--active');
+            overlay.classList.add('header__overlay--active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeMenu = () => {
+            mobileMenu.classList.remove('header__mobile-menu--active');
+            overlay.classList.remove('header__overlay--active');
+            document.body.style.overflow = '';
+        };
+
+        burger.addEventListener('click', openMenu);
+        mobileClose?.addEventListener('click', closeMenu);
+        overlay?.addEventListener('click', closeMenu);
+
+        // Закрытие при клике на ссылки меню
+        const mobileLinks = document.querySelectorAll('.header__mobile-nav a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
     };
 
     // Smooth scrolling для якорных ссылок
@@ -192,6 +219,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initPackagesTabs();
     initTestimonialsSwiper();
     initFAQ();
+    mobileMenuToggle();
 
 });
 

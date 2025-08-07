@@ -25,6 +25,7 @@
 
 	&__main {
 		max-width: 60%;
+		width: 100%;
 
 		@media screen and (max-width: $mobile) {
 			max-width: 100%;
@@ -83,6 +84,7 @@
 		justify-content: space-between;
 		align-items: center;
 		text-transform: none;
+		gap: 5px;
 
 		&:hover {
 			background-color: transparent;
