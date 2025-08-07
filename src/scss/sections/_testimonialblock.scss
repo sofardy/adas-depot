@@ -1,4 +1,9 @@
 .testimonialblock {
+	margin-bottom: 100px;
+
+	@media screen and (max-width: $mobile) {
+		margin-bottom: 70px;
+	}
 	// .testimonialblock__container
 
 	&__container {
@@ -25,7 +30,8 @@
 			font-size: 34px;
 			line-height: 1.26em;
 			text-align: start;
-			margin-bottom: 18px;
+			margin-bottom: 35px;
+			max-width: 360px;
 		}
 	}
 
@@ -34,6 +40,11 @@
 	&__main {
 		display: flex;
 		justify-content: space-between;
+
+		@media screen and (max-width: $tablet) {
+			flex-direction: column-reverse;
+			gap: 35px;
+		}
 	}
 
 	// .testimonialblock__features
@@ -44,7 +55,8 @@
 		gap: 0;
 		max-width: 40%;
 
-		@media (max-width: $mobile) {
+		@media (max-width: $tablet) {
+			max-width: 100%;
 		}
 	}
 
@@ -78,33 +90,49 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: 150%;
+
+		@media screen and (max-width: $mobile) {
+			font-size: 18px;
+		}
 	}
 
 	// .testimonialblock__testimonials
 
 	&__testimonials {
 		width: calc(60% - 32px);
+
+		@media (max-width: $tablet) {
+			width: 100%;
+		}
 	}
 
 	// .testimonialblock__swiper
 
 	&__swiper {
-	}
+		.swiper-slide {
+			height: auto;
+			display: flex;
+			align-items: stretch;
+		}
 
-	.swiper-slide {
-		height: 100%;
-		display: flex;
-		align-items: stretch;
+		.swiper-wrapper {
+			align-items: stretch !important;
+		}
 	}
 
 	// .testimonialblock__testimonial
 
 	&__testimonial {
+		padding: 53px;
+		background-color: $white;
 		height: 100%;
 		display: flex;
 		justify-content: space-between;
-		padding: 53px;
-		background-color: $white;
+		min-height: 340px;
+
+		@media (max-width: $mobile) {
+			padding: 52px 25px;
+		}
 	}
 
 	// .testimonialblock__testimonial-content
@@ -123,6 +151,11 @@
 		font-weight: 700;
 		line-height: 28px;
 		margin-bottom: 14px;
+
+		@media screen and (max-width: $mobile) {
+			font-size: 18px;
+			line-height: 1.5em;
+		}
 	}
 
 	// .testimonialblock__testimonial-text
@@ -156,6 +189,10 @@
 			width: 100%;
 			height: 100%;
 		}
+
+		@media screen and (max-width: $mobile) {
+			width: 52px;
+		}
 	}
 
 	// .testimonialblock__testimonial-info
@@ -164,7 +201,7 @@
 	}
 
 	// .testimonialblock__testimonial-name
-	f &__testimonial-name {
+	&__testimonial-name {
 		color: $title;
 		font-family: $font-inter;
 		font-size: 18px;

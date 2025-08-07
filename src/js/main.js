@@ -88,12 +88,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (testimonialsSwiper) {
             new Swiper('.testimonialblock__swiper', {
-                slidesPerView: 1,
+                slidesPerView: 1.2,
                 spaceBetween: 30,
                 loop: true,
-                autoHeight: false, // фиксированная высота
+                autoHeight: true,
+                grabCursor: true,
+                simulateTouch: true,
+                touchReleaseOnEdges: true,
                 autoplay: {
-                    delay: 60000,
+                    delay: 5000,
                     disableOnInteraction: false,
                 },
                 pagination: {
@@ -103,11 +106,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 breakpoints: {
                     768: {
                         slidesPerView: 2,
-                        spaceBetween: 40,
+                        spaceBetween: 30,
                     },
                     1024: {
                         slidesPerView: 1.5,
-                        spaceBetween: 50,
+                        spaceBetween: 30,
                     }
                 }
             });
@@ -119,13 +122,4 @@ document.addEventListener('DOMContentLoaded', function () {
     initPackagesTabs();
     initTestimonialsSwiper();
 
-    // Инициализация Swiper (если нужно)
-    // const swiper = new Swiper('.swiper', {
-    //   // конфигурация
-    // });
-
-    // Инициализация Fancybox (если нужно)
-    // Fancybox.bind('[data-fancybox]', {
-    //   // конфигурация
-    // });
 });
