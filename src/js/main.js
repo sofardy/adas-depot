@@ -214,12 +214,63 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     };
 
+    // Обработка формы systemform
+    const initSystemForm = () => {
+        const form = document.querySelector('.systemform__form');
+        const successMessage = document.getElementById('systemform-success');
+
+        if (!form) return;
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            // Получаем данные формы
+            const formData = new FormData(form);
+            const submitButton = form.querySelector('.systemform__submit');
+            const originalButtonText = submitButton.innerHTML;
+
+            // Show loading state
+            submitButton.innerHTML = 'SENDING...';
+            submitButton.disabled = true;
+
+            try {
+                // Send data to webhook
+                const response = await fetch('https://n8n.sofard.dev/webhook/01480ce6-7240-49c7-be84-ca39da05d29b', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    // Successful submission
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+
+                    // Scroll to success message
+                    successMessage.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('An error occurred while submitting the form. Please try again.');
+            } finally {
+                // Restore original button state
+                submitButton.innerHTML = originalButtonText;
+                submitButton.disabled = false;
+            }
+        });
+    };
+
     // Инициализация функций
     smoothScroll();
     initPackagesTabs();
     initTestimonialsSwiper();
     initFAQ();
     mobileMenuToggle();
+    initSystemForm();
 
 });
 
