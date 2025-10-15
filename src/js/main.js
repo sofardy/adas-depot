@@ -250,6 +250,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         behavior: 'smooth',
                         block: 'center'
                     });
+
+                    // Отправка события в dataLayer
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        event: 'submit',
+                        form: 'systemform'
+                    });
                 } else {
                     throw new Error('Server error');
                 }
