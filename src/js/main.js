@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Отправка события в dataLayer
                     window.dataLayer = window.dataLayer || [];
                     window.dataLayer.push({
-                        event: 'submit',
+                        event: 'submit_get_started',
                         form: 'systemform'
                     });
                 } else {
